@@ -79,7 +79,7 @@ export const Navbar = () => {
                 key={link.path}
                 to={link.hash ? `${link.path}#${link.hash}` : link.path}
                 onClick={(e) => link.hash ? handleNavClick(e, link) : undefined}
-                className={`relative font-medium transition-colors duration-300 ${textColor} hover:text-solar underline-animate`}
+                className={`relative font-heading font-semibold uppercase tracking-wide text-sm transition-colors duration-300 ${textColor} hover:text-solar underline-animate`}
               >
                 {link.name}
                 {location.pathname === link.path && (
@@ -145,7 +145,7 @@ export const Navbar = () => {
                   key={link.path}
                   to={link.hash ? `${link.path}#${link.hash}` : link.path}
                   onClick={(e) => link.hash ? handleNavClick(e, link) : setIsMobileMenuOpen(false)}
-                  className={`block py-3 font-medium text-foreground hover:text-primary transition-colors ${location.pathname === link.path ? 'text-primary' : ''
+                  className={`block py-3 font-heading font-semibold uppercase tracking-wide text-foreground hover:text-primary transition-colors ${location.pathname === link.path ? 'text-primary' : ''
                     }`}
                 >
                   {link.name}

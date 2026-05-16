@@ -10,7 +10,6 @@ export const FeaturedProducts = () => {
 
   // Pick exactly exactly 4 dynamic products strictly from the database modules
   const featuredProducts = modules.map((module) => {
-    // Find first product that belongs to this specific module/category
     const product = products.find(p => p.moduleId === module.id);
     const brand = product ? data.brands.find(b => b.id === product.brandId)?.name : '';
 
@@ -26,7 +25,7 @@ export const FeaturedProducts = () => {
       hasProduct: !!product,
       isOutOfStock: !!product?.isOutOfStock
     };
-  }).slice(0, 4);
+  }).filter(p => p.hasProduct).slice(0, 4);
 
   return (
     <section className="py-24 bg-background">
@@ -69,7 +68,7 @@ export const FeaturedProducts = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group flex flex-col bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-300 card-hover"
               >
-                <div className="aspect-square p-2 bg-solar relative overflow-hidden shrink-0">
+                <div className="aspect-square p-2 bg-white relative overflow-hidden shrink-0">
                   <img
                     src={product.image}
                     alt={product.name}
@@ -105,7 +104,7 @@ export const FeaturedProducts = () => {
                       {product.brand}
                     </div>
                   )}
-                  <h3 className="text-xl font-semibold text-muted-foreground mb-4 group-hover:text-foreground transition-colors line-clamp-1">
+                  <h3 className="text-xl font-heading font-bold text-foreground mb-4 uppercase tracking-tight line-clamp-1">
                     {product.name}
                   </h3>
                   <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
