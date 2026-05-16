@@ -137,37 +137,64 @@ export const Footer = () => {
           <div className="flex flex-wrap gap-x-3 gap-y-2">
             {[
               { name: 'Bengaluru Urban', major: true },
-              { name: 'Bengaluru Rural', major: false },
-              { name: 'Mysuru', major: true },
-              { name: 'Mangaluru', major: true },
+              { name: 'Bengaluru Rural', major: true },
+              { name: 'Mysuru', major: false },
+              { name: 'Mangaluru', major: false },
               { name: 'Hubballi-Dharwad', major: true },
               { name: 'Belagavi', major: true },
               { name: 'Kalaburagi', major: true },
               { name: 'Davanagere', major: true },
               { name: 'Ballari', major: true },
-              { name: 'Shivamogga', major: true },
+              { name: 'Shivamogga', major: false },
               { name: 'Tumakuru', major: true },
-              { name: 'Udupi', major: true },
-              { name: 'Bagalkot', major: false },
-              { name: 'Bidar', major: false },
+              { name: 'Udupi', major: false },
+              { name: 'Bagalkot', major: true },
+              { name: 'Bidar', major: true },
               { name: 'Chamarajanagar', major: false },
-              { name: 'Chikkaballapur', major: false },
-              { name: 'Chikkamagaluru', major: false },
-              { name: 'Chitradurga', major: false },
+              { name: 'Chikkaballapur', major: true },
+              { name: 'Chikkamagaluru', major: true },
+              { name: 'Chitradurga', major: true },
               { name: 'Dakshina Kannada', major: false },
               { name: 'Gadag', major: false },
               { name: 'Hassan', major: false },
               { name: 'Haveri', major: false },
               { name: 'Kodagu', major: false },
-              { name: 'Kolar', major: false },
-              { name: 'Koppal', major: false },
-              { name: 'Mandya', major: false },
-              { name: 'Raichur', major: false },
-              { name: 'Ramanagara', major: false },
-              { name: 'Uttara Kannada', major: false },
-              { name: 'Vijayapura', major: false },
-              { name: 'Vijayanagara', major: false },
-              { name: 'Yadgir', major: false },
+              { name: 'Kolar', major: true },
+              { name: 'Koppal', major: true },
+              { name: 'Mandya', major: true },
+              { name: 'Raichur', major: true },
+              { name: 'Ramanagara', major: true },
+              { name: 'Uttara Kannada', major: true },
+              { name: 'Vijayapura', major: true },
+              { name: 'Vijayanagara', major: true },
+              { name: 'Yadgir', major: true },
+            ].map((district, i, arr) => (
+              <span key={district.name} className="flex items-center gap-x-3">
+                <span className={`font-heading text-sm ${district.major ? 'text-solar font-bold' : 'text-primary-foreground/70 font-medium'}`}>
+                  {district.name}
+                </span>
+                {i < arr.length - 1 && <span className="text-primary-foreground/30 text-xs">•</span>}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Andhra Pradesh Districts */}
+      <div className="border-t border-primary-foreground/10">
+        <div className="container mx-auto px-4 py-8">
+          <div className="flex items-center gap-3 mb-6">
+            <MapPin className="h-5 w-5 text-solar shrink-0" />
+            <h4 className="font-heading font-bold text-base text-solar tracking-wide uppercase">
+              We Also Serve in Andhra Pradesh
+            </h4>
+          </div>
+          <div className="flex flex-wrap gap-x-3 gap-y-2">
+            {[
+              { name: 'Kurnool', major: true },
+              { name: 'Puttaparthi', major: true },
+              { name: 'Ananthapur', major: true },
+              { name: 'Nellore', major: true },
             ].map((district, i, arr) => (
               <span key={district.name} className="flex items-center gap-x-3">
                 <span className={`font-heading text-sm ${district.major ? 'text-solar font-bold' : 'text-primary-foreground/70 font-medium'}`}>
