@@ -7,7 +7,7 @@ import { useAdmin } from '@/context/AdminContext';
 export const HeroSection = () => {
   const { data } = useAdmin();
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
+    <section className="relative min-h-screen flex flex-col overflow-hidden bg-gray-900">
       {/* Background Image */}
       <div className="absolute inset-x-0 top-0 h-screen z-0 flex items-center justify-center">
         <img
@@ -19,24 +19,14 @@ export const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="w-full pl-8 md:pl-20 pr-8 relative z-10 py-20">
+      <div className="flex-1 flex flex-col justify-between w-full pl-8 md:pl-20 pr-8 relative z-10 pt-40 pb-8">
         <div className="w-full">
           <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="inline-block px-4 py-2 rounded-full bg-solar/20 text-solar font-semibold text-sm mb-6 border border-solar/30">
-                India's Trusted Solar Energy Partner
-              </span>
-            </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-primary-foreground leading-tight mb-6"
+              className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold text-primary-foreground leading-tight mb-4"
             >
               Powering a{' '}
               <span className="text-solar">Sustainable</span>{' '}
@@ -47,7 +37,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg md:text-xl text-primary-foreground/90 mb-4 max-w-2xl leading-relaxed"
+              className="text-sm md:text-base text-primary-foreground/90 mb-3 max-w-2xl leading-relaxed"
             >
               Join millions of Indians switching to clean, affordable solar energy.
               Reduce your electricity bills by up to 90% while contributing to a greener planet.
@@ -57,7 +47,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className="text-xl font-heading font-semibold text-solar mb-8"
+              className="text-base font-heading font-semibold text-solar mb-5"
             >
               Generate | Conserve | Contribute
             </motion.p>
@@ -89,7 +79,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.38 }}
-            className="mt-4"
+            className="mt-2"
           >
             <div style={{
               background: 'linear-gradient(135deg, rgba(20, 30, 60, 0.7) 0%, rgba(30, 45, 90, 0.7) 100%)',
@@ -161,7 +151,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-3 gap-8 mt-10 pt-6 border-t border-primary-foreground/20"
+            className="grid grid-cols-3 gap-8 mt-2 pt-2 border-t border-primary-foreground/20"
           >
             <div>
               <div className="text-3xl md:text-4xl font-heading font-bold text-solar">{data.catalogStats.brands}+</div>
@@ -178,6 +168,18 @@ export const HeroSection = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Trusted Badge - Right Side */}
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        className="absolute top-24 left-1/2 -translate-x-1/2 z-10"
+      >
+        <span className="inline-block px-6 py-3 rounded-full bg-solar/20 text-white font-semibold text-lg border border-solar/30">
+          India's Trusted Solar Energy Partner
+        </span>
+      </motion.div>
 
       {/* Scroll Indicator */}
       <motion.div
